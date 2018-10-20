@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 
 from datasets import load_fire_data, closer_fires_in
 from datasets import distance_to_event
@@ -16,6 +16,8 @@ def home():
     longitude = float(request.args.get('longitude'))
     max_distance = float(request.args.get('max_distance'))
 
+    print("Latitude: {} // Longitude: {} // Max_distance: {}".format(latitude, longitude, max_distance))
+
     # Get the fire data
     fires = load_fire_data()
 
@@ -25,9 +27,21 @@ def home():
     # Get all the fires in max_distance radius    
     closer_fires = closer_fires_in(fires, max_distance)
 
-    return jsonify(closer_fires),200
+    # Needed to add header
+    resp = jsonify(closer_fires)
+    resp.headers['Access-Control-Allow-Origin'] = "*"
+    resp.headers['Access-Control-Allow-Header'] = "*"
+    resp.headers['Access-Control-Allow-Method'] = "GET, POST, OPTIONS, DELETE, UPDATE"
+    
+
+    resp.headers["Content-Type"] = "application/json"
+
+    
+    # return jsonify(closer_fires), 200
+    return resp
 
 
 # Current location 41.659636, -0.907556
 if __name__ == "__main__":
-    app.run()    
+    print("Server running...")
+    app.run(host='0.0.0.0')    

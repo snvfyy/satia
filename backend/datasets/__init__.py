@@ -30,7 +30,7 @@ def closer_fires_in(fires, max_distance):
     closer_fires = []
     for fire in fires:
         if fire["distance_to_user"] < max_distance:
-            fire["direction"] = wind_direction(fire["latitude"], fire["longitude"])
+            # fire["direction"] = wind_direction(fire["latitude"], fire["longitude"])
             closer_fires.append(fire)
     return closer_fires
 
@@ -54,12 +54,13 @@ def load_fire_data():
 def wind_direction(latitude, longitude):
     """ Gets the wind direction of a point from OpenWeatherMap api """
     url = "http://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid=14f9aa24a9dd496142f03c49211a1c24"
-    
+    url = url.format(latitude=latitude, longitude=longitude)
+    print("Requesting: {}".format(url))
     headers = {
         "cache-control": "no-cache"
     }
 
-    response = requests.request("GET", url.format(latitude=latitude, longitude=longitude), headers=headers)    
+    response = requests.request("GET", url, headers=headers)    
     
     return json.loads(response.text)["wind"]
         

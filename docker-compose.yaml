@@ -1,0 +1,32 @@
+version: "2"
+
+networks:
+  internal-network:
+    driver: bridge
+
+services:
+  web:
+    container_name: satia_web
+    image: nginx
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    networks: 
+      internal-network:
+        aliases:
+          - web
+    volumes:
+      - ./frontend:/usr/share/nginx/html/
+
+  app:
+    container_name: satia_app
+    build: .
+    restart: unless-stopped
+    ports:
+      - 5000:5000
+    networks: 
+      internal-network:
+        aliases:
+          - app
+    volumes:
+      - ./backend:/app
