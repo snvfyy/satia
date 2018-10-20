@@ -1,6 +1,30 @@
+body{
+	font-family: 'Lato', sans-serif;
+}
+.card{
+	    border-radius: 0px;
+	    border: solid 0px;
+}
+.card-header:first-child{
+	    box-shadow: #00001138 0px 3px 5px;
+
+}
+.list-group-item {
+	border:0px;}
 .banner{
-    
-    background-color: red;
+    text-align: center;
+    background-image: url(../img/default.jpg);
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    box-shadow: #001 0px 0px 29px;
+  
+}
+.result{
+	color: #e9ecef;
+    font-size: large;
 }
 
 .recommend , .data{
@@ -8,7 +32,17 @@
 }
 
 .alert{
-    
+    font-size: xx-large;
+    color: #fff;
+    background: #dee2e617;
+  
+    box-shadow: #0000003b 0px 2px;
+}
+.time_container{
+	color: #000;
+    /* background: #00000014; */
+    text-shadow: #00000024 1px 0px 1px;
+    padding: 0px 0px 20px 0px;
 }
 .boton-gordo{
 	background-color:white;
