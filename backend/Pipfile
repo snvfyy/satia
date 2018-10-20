@@ -5,6 +5,8 @@ verify_ssl = true
 
 [packages]
 flask = "*"
+geopy = "*"
+requests = "*"
 
 [requires]
 python_version = "3.5"
