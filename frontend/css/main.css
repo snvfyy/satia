@@ -1,6 +1,6 @@
 .banner{
     
-    background-color: red;
+    background-image: "img/imgDefecto.jpg";
 }
 
 .recommend , .data{
@@ -10,3 +10,20 @@
 .alert{
     
 }
+.boton-gordo{
+	background-color:white;
+	padding:3% 6%;
+	border:solid;
+	border-color: white;
+	color:black;
+	font-size: 30px;
+ 	-webkit-transition:  0.7s;
+ 	transition:  0.7s;
+ 	opacity:0.7;
+ 	display: inline-block;
+ 	float:center;
+}
+.boton-gordo:hover{
+	opacity:1;
+}
+
