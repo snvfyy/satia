@@ -1,7 +1,7 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
 
-<head >
+<head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SATIA</title>
@@ -11,58 +11,64 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
      <script src="js/main.js"></script>
     <script src="js/jquery-3.3.1.js"></script>
-
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 
 <body onload="getLocation()">
     <header>
-        <div class="banner">
-                <button class="boton-gordo">Find Me</button>
-                <div id="result"></div>
-            <div class="alert">
-                Alerta
-            </div>
-            <br>
-            <div class="time">
-                TIEMPO
-            </div>
-            <div class="distance">
-                DISTANCIA
-            </div>
-        </div>
+            <div class="container-fluid banner">
+                    <div class="row">
+                      <div class=" col-lg-12 result">
+                        Su posicion actual es:<br/>
+                            Long: 5.45454, Lat: 45.56415
+                      </div>
+                      <div class="col-lg-12 alert">
+                        Sin Alertas
+                    </div>
+                      <div class="col-12 time_container">
+                            A las <span class="time">12:32:12</span> <span>a  <span class="time">12Km </span>  </span>        
+                      </div>
+                    </div>
+                  </div>
 
-        <div class="container">
+        
+
+        <div class="container-fluid">
             <div class="row">
 
                 <div class="col-lg-8 h-50 recommend">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="card-title">
-                                <h2>
-                                   Recomendaciones
-                                </h2>
-                                <p class="card-text">
-                                    jdifkajsdfkjaskdjf
-                                </p>
-                            </div>
-                        </div>
+                    <div class="card">
+                      <div class="card-header">
+                        Recomendaciones
+                      </div>
+                      <div class="card-body">
+                       <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Cras justo odio</li>
+                          <li class="list-group-item">Dapibus ac facilisis in</li>
+                          <li class="list-group-item">Morbi leo risus</li>
+                          <li class="list-group-item">Porta ac consectetur ac</li>
+                          <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                      </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 h-50 data">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <div class="card-title">
-                                    <h2>
-                                        Datos del entorno
-                                    </h2>
-                                    <p class="card-text">
-                                        akjdshfkajhdsf
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="card">
+                      <div class="card-header">
+                        Datoss
+                      </div>
+                      <div class="card-body">
+                       <ul class="list-group list-group-flush">
+                          <li class="list-group-item">Cras justo odio</li>
+                          <li class="list-group-item">Dapibus ac facilisis in</li>
+                          <li class="list-group-item">Morbi leo risus</li>
+                          <li class="list-group-item">Porta ac consectetur ac</li>
+                          <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                      </div>
                     </div>
+                </div>
 
             </div>
         </div>
