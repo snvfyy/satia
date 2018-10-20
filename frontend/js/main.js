@@ -10,3 +10,8 @@
 				    console.log("Latitude: " + position.coords.latitude +
 				    "<br>Longitude: " + position.coords.longitude);
 				}
+	
+	function cambiar_fondo_con_style(colorsel){
+		var color = document.getElementById(colorsel).style.backgroundColor;
+		document.body.style.backgroundColor= color;
+		}
