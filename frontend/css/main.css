@@ -8,21 +8,21 @@
 }
 
 .alert{
-
+    
 }
-
-#boton-gordo{
-    background-color:white;
-    padding:6% 12%;
-    border:solid;
-    border-color: white;
-    color:grey;
-    font-size: 30px;
-     -webkit-transition:  0.7s;
-     transition:  0.7s;
-     opacity:0.9;
-     display: inline-block;
+.boton-gordo{
+	background-color:white;
+	padding:3% 6%;
+	border:solid;
+	border-color: white;
+	color:black;
+	font-size: 30px;
+ 	-webkit-transition:  0.7s;
+ 	transition:  0.7s;
+ 	opacity:0.7;
+ 	display: inline-block;
+ 	float: center;
 }
-#boton-gordo:hover{
-    opacity:1;
+.boton-gordo:hover{
+	opacity:1;
 }

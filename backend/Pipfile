@@ -5,7 +5,12 @@ verify_ssl = true
 
 [packages]
 flask = "*"
+<<<<<<< HEAD
 
+=======
+geopy = "*"
+requests = "*"
+>>>>>>> c6122fd680335dce76135f73442e1853394fb3d6
 
 [dev-packages]
 "autopep8" = "*"
