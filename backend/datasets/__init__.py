@@ -1,7 +1,6 @@
 from math import sin, cos, sqrt, atan2, radians
 import requests
 import json
-import geopy.distance
 
 def distance_to_event(event_list, longitude, latitude):
     """ Calculate the distance between the point {longitude, latitude} and every
