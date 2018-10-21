@@ -49,3 +49,7 @@ body{
 	width: 10%;
 	float: left;
 }
+
+#idtiempo,#idposicion{
+    color: #fff;
+}

@@ -44,6 +44,7 @@ function updateFromServer(latitude, longitude, max_distance) {
 	});
 }
 
+
 function procesarJSON(data) {
 	console.log(data);
 	if (data['fires'].length < 1) {
@@ -87,8 +88,8 @@ function cambiosfuego(fire) {
 	});
 
 	$('#idalerta').html('Alerta por Riesgo de Incendio');
-	$('#idtiempo').html('Registrada en ' + fire['acq_date'] + ' a las ' + fire['acq_time'] / 60 + ':' + fire['acq_time'] % 60);
-	$('#idposicion').html('A ' + fire['distance_to_user'] + ' Kilómetros')
+	$('#idtiempo').html('Registrada en ' + fire['acq_date'] + ' a las ' + Math.floor(fire['acq_time'] / 60)+ ':' + fire['acq_time'] % 60);
+	$('#idposicion').html('A ' + (fire['distance_to_user']).toFixed(2) + ' Kilómetros');
 
 }
 
@@ -100,5 +101,8 @@ function tipsfuego(tips) {
 	$('#tips').html(lista);
 
 }
+
+
+
 
 
