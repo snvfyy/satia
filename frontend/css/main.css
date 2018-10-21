@@ -44,19 +44,8 @@ body{
     text-shadow: #00000024 1px 0px 1px;
     padding: 0px 0px 20px 0px;
 }
-.boton-gordo{
-	background-color:white;
-	padding:3% 6%;
-	border:solid;
-	border-color: white;
-	color:black;
-	font-size: 30px;
- 	-webkit-transition:  0.7s;
- 	transition:  0.7s;
- 	opacity:0.7;
- 	display: inline-block;
- 	float: center;
-}
-.boton-gordo:hover{
-	opacity:1;
+
+.logo{
+	width: 10%;
+	float: left;
 }

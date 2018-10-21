@@ -31,8 +31,11 @@ function updateFromServer(latitude, longitude, max_distance) {
             "Access-Control-Allow-Credentials": "true"
         },
         success: function (data) {
-            console.log((JSON.stringify(data)));
-            procesarJSON(JSON.stringify(data));
+			console.log((JSON.stringify(data)));
+			if(data){
+				 procesarJSON(data);
+			}
+           
         },
         error: function (xhr, data) {
             console.log("error")
@@ -42,24 +45,35 @@ function updateFromServer(latitude, longitude, max_distance) {
 }
 
 function procesarJSON(data){
-    if(data['fire'].length<1){
+	console.log(data);
+    if(data['fires'].length<1){
         sinAlertas();
     }else{
-        alertafuegos(data)
+        alertafuegos(data['fires'],data['fire_tips'])
     }
 }
 function sinAlertas(){
-    $('#idalerta').txt('Sin Alerta');
-    $('#idtiempo').txt('');
-    $('#idposición').txt('Tu posición es'+ position)
+    $('#idalerta').html('Sin Alerta');
+    $('#idtiempo').html('');
+    $('#idposición').html('Tu posición es'+ position)
 }
 
-function alertafuegos(fire){
-if ([confidence]=="nominal"&& [distance_to_user]<400){
-        //hay fuegos
-        cambiosfuego(fire['fire'])
-        tipsfuego(firetips['fire_tips']);
-    }
+function alertafuegos(fires,fire_tips){
+	var hayAlerta = false;
+	var fuego = null;
+	fires.forEach(fire => {
+		if (fire['confidence']=="nominal"&& fire['distance_to_user']<400){
+		//hay fuegos
+		hayAlerta = true;
+		fuego = fire;
+        
+	}
+	if (hayAlerta) {
+		cambiosfuego(fuego)
+        tipsfuego(fire_tips);
+	}
+});
+
     
 }
 
@@ -72,16 +86,19 @@ function cambiosfuego(fire){
         'background-color':'#b30000',
     });
     
-    $('#idalerta').txt('Alerta por Riesgo de Incendio');
-    $('#idtiempo').txt('Registrada en'+[aqc_date]+'a las'+[aqc_time]/60+':'+[aqc_time]%60 );
-    $('#idposicion').txt('A'+[distance_to_user]+'Kilómetros')
+    $('#idalerta').html('Alerta por Riesgo de Incendio');
+    $('#idtiempo').html('Registrada en '+fire['acq_date']+' a las '+fire['acq_time']/60+':'+fire['acq_time']%60 );
+    $('#idposicion').html('A '+fire['distance_to_user']+' Kilómetros')
 
 }
 
 function tipsfuego(tips){
-    for(var i=0; i<tips.length;i++){
-        $('#tips').append('<li class="list-group-item">'+tips[i]+'</li>');
-
-    }
+	var lista ="";
+	tips.forEach(tip => {
+		lista+='<li class="list-group-item">'+tip+'</li>';
+	});
+	$('#tips').html(lista);
     
 }
+
+
