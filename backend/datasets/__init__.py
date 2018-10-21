@@ -41,7 +41,7 @@ def load_fire_data():
         # Iterate over all the lines skipping the header line
         for line in f.readlines()[1:]:
             fire = line.split(',')            
-            fire = {
+            fire = {                
                 "latitude": float(fire[0]),
                 "longitude": float(fire[1]),
                 "acq_date": fire[5],

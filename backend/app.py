@@ -3,6 +3,8 @@ from flask import Flask, request, jsonify, Response
 from datasets import load_fire_data, closer_fires_in
 from datasets import distance_to_event
 
+from tips import load_fire_tips
+
 app = Flask(__name__)
 
 @app.errorhandler(404)
@@ -27,15 +29,16 @@ def home():
     # Get all the fires in max_distance radius    
     closer_fires = closer_fires_in(fires, max_distance)
 
+    events = {
+        "fires": closer_fires,        
+        "fire_tips": load_fire_tips()        
+    }
     # Needed to add header
-    resp = jsonify(closer_fires)
+    resp = jsonify(events)
     resp.headers['Access-Control-Allow-Origin'] = "*"
     resp.headers['Access-Control-Allow-Header'] = "*"
     resp.headers['Access-Control-Allow-Method'] = "GET, POST, OPTIONS, DELETE, UPDATE"
-    
-
     resp.headers["Content-Type"] = "application/json"
-
     
     # return jsonify(closer_fires), 200
     return resp
