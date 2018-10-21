@@ -2,9 +2,7 @@ body{
     font-family: 'Lato', sans-serif;
     background-color: #bac8e0;
 }
-.data, .recommend{
-    display: none;
-}
+
 .card{
 	    border-radius: 0px;
 	    border: solid 0px;
@@ -63,7 +61,7 @@ body{
     -webkit-transition:  0.7s;
     transition:  0.7s;    
     box-shadow: #00000024 3px 0px 3px;
-    max-height: 500px;
+    /* max-height: 500px; */
 }
 
 .map:hover{

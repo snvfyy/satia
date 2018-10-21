@@ -4,12 +4,11 @@ $(document).ready(function () {
 })
 
 function getLocation() {
-	// if (navigator.geolocation) {
-	navigator.geolocation.getCurrentPosition(showPosition);
-
-	// } else {
-	//  console.log("Geolocation is not supported by this browser.");
-	// }
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showPosition);
+	} else {
+		console.log("Geolocation is not supported by this browser")
+	}
 }
 
 function showPosition(position) {
@@ -21,7 +20,6 @@ function showPosition(position) {
 		initialize_map(position.coords.latitude, position.coords.longitude, 6)
 		$("#map").addClass("initialized")
 	}
-
 }
 
 function updateFromServer(latitude, longitude, max_distance) {
@@ -37,7 +35,6 @@ function updateFromServer(latitude, longitude, max_distance) {
 		},
 		success: function (data) {
 			console.log((JSON.stringify(data)));
-			// if (data) {
 			procesarJSON(data);
 			if (!$("#map").hasClass("has_points")) {
 				add_fire_points(data["fires"])
