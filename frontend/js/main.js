@@ -36,10 +36,7 @@ function updateFromServer(latitude, longitude, max_distance) {
 		success: function (data) {
 			console.log((JSON.stringify(data)));
 			procesarJSON(data);
-			if (!$("#map").hasClass("has_points")) {
-				add_fire_points(data["fires"])
-				$("#map").addClass("has_points")
-			}
+
 		},
 		error: function (xhr, data) {
 			console.log("error")
@@ -53,8 +50,16 @@ function procesarJSON(data) {
 	console.log(data);
 	if (data['fires'].length < 1) {
 		sinAlertas();
+		if (!$("#map").hasClass("has_points")) {
+			
+			$("#map").addClass("has_points")
+		}
 	} else {
 		alertafuegos(data['fires'], data['fire_tips'])
+		if (!$("#map").hasClass("has_points")) {
+			add_fire_points(data["fires"])
+			$("#map").addClass("has_points")
+		}
 	}
 }
 function sinAlertas() {
@@ -62,7 +67,8 @@ function sinAlertas() {
 	$('#idtiempo').html('');
 	$('#idposición').html('Tu posición es' + position)
 	$('.recommend').hide();
-
+	//$('.mapita').fadeIn(750);
+	
 }
 
 function alertafuegos(fires, fire_tips) {
@@ -77,6 +83,7 @@ function alertafuegos(fires, fire_tips) {
 		}
 		if (hayAlerta) {
 			$('.recommend').show();
+//			$('.mapita').fadeIn(750);
 			cambiosfuego(fuego)
 			tipsfuego(fire_tips);
 		}
@@ -85,6 +92,10 @@ function alertafuegos(fires, fire_tips) {
 
 function cambiosfuego(fire) {
 	// CAMBIOS CSS con JQuery
+	/*$( "body" ).animate({
+		backgroundColor: "#b30000"
+	  }, 1000 );
+	*/
 	$('.banner').css({
 		'background-image': 'url(../img/fire.jpg)'
 	});
@@ -104,6 +115,8 @@ function tipsfuego(tips) {
 		lista += '<li class="list-group-item">' + tip + '</li>';
 	});
 	$('#tips').html(lista);
+	
+	
 
 }
 
