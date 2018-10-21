@@ -57,11 +57,13 @@ body{
 }
 
 .map{
+    display: inline-block;
+    float:center;
     opacity:0.6;
     -webkit-transition:  0.7s;
     transition:  0.7s;    
     box-shadow: #00000024 3px 0px 3px;
-    /* max-height: 500px; */
+    height: 500px;     
 }
 
 .map:hover{
