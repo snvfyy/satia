@@ -7,13 +7,14 @@ ENV LANG C.UTF-8
 
 WORKDIR $basedir
 
-COPY ./backend .
+# COPY ./backend .
 
 # RUN     pip install pipenv
 # RUN     pipenv install --system
 RUN     pip install flask \
     &&  pip install requests
 
+VOLUME /app
 EXPOSE 5000
 
 ENTRYPOINT ["python3", "app.py"]
