@@ -1,4 +1,7 @@
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 $(document).ready(function () {
 	getLocation();
 	setInterval(getLocation, 5000);
@@ -40,4 +43,3 @@ function updateFromServer(latitude, longitude, max_distance) {
 		dataType: 'json',
 	});
 }
-

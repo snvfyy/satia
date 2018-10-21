@@ -39,6 +39,7 @@ def home():
     resp.headers['Access-Control-Allow-Header'] = "*"
     resp.headers['Access-Control-Allow-Method'] = "GET, POST, OPTIONS, DELETE, UPDATE"
     resp.headers["Content-Type"] = "application/json"
+
     
     # return jsonify(closer_fires), 200
     return resp
