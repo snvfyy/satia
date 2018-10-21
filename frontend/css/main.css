@@ -32,9 +32,12 @@ body{
 .recommend , .data{
     margin: 5% auto;
 }
+.recommend{
+    display: none;
+}
 
 .alert{
-    font-size: xx-large;
+    font-size: 4vw;
     color: #fff;
     background: #dee2e617;
   
@@ -47,8 +50,12 @@ body{
     padding: 0px 0px 20px 0px;
 }
 
+.tit{
+    font-weight: bold;
+}
+
 .logo{
-	width: 10%;
+	width: 7%;
 	float: left;
 }
 
@@ -58,7 +65,6 @@ body{
 
 .map{
     display: inline-block;
-    float:center;
     opacity:0.6;
     -webkit-transition:  0.7s;
     transition:  0.7s;    
