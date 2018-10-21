@@ -1,5 +1,7 @@
 # SATIA
 
+![Logo Satia](https://github.com/AndreaMarinosa/satia/blob/master/frontend/img/Logo%20Satia.png?s=50)
+
 SATIA o Sistema de Alerta Temprana para Incidencias Ambientales, es una
 aplicación que permite a los usuarios conocer los riesgos
 naturales que estan poniendoles en peligro, y al mismo tiempo les
