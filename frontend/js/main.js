@@ -64,6 +64,8 @@ function sinAlertas() {
 	$('#idalerta').html('Sin Alerta');
 	$('#idtiempo').html('');
 	$('#idposición').html('Tu posición es' + position)
+	$('.recommend').hide();
+	$('.data').hide();
 }
 
 function alertafuegos(fires, fire_tips) {
@@ -77,6 +79,8 @@ function alertafuegos(fires, fire_tips) {
 
 		}
 		if (hayAlerta) {
+			$('.recommend').show();
+			$('.data').show();
 			cambiosfuego(fuego)
 			tipsfuego(fire_tips);
 		}
