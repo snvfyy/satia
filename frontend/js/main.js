@@ -25,7 +25,7 @@ function showPosition(position) {
 function updateFromServer(latitude, longitude, max_distance) {
 	$.ajax({
 		type: "GET",
-		url: "http://localhost:5000/?latitude=" + latitude + "&longitude=" + longitude + "&max_distance=" + max_distance,
+		url: "http://155.210.4.106:80/?latitude=" + latitude + "&longitude=" + longitude + "&max_distance=" + max_distance,
 		header: {
 			"accept": "application/json",
 			"Access-Control-Allow-Origin": "*",
